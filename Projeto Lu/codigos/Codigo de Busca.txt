@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LuriCosmesticos</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+     <h1> LuriCosmesticos</h1> 
+      <main> 
+        <section>
+            <input type="text" id="campo-pesquisa" placeholder="Digite sua pesquisa">
+            <button id="botao-pesquisa">Pesquisar</button>
+        <div id="resultados-pesquisa"></div>
+    </section>
+        <section class="resultados-pesquisa"
+            id ="resultados-pesquisa">
+        </section>
+    </main>
+    <footer>
+        <p>2024 - NTG-TI. Tdos os Direitos reservados</p>
+        <p>Contato:  @lury_ds</p>
+</footer>
+    <script src="dados.js"></script>
+    <script src="app.js"></script>
+    </header>
+</body>
+</html>
