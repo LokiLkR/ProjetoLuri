@@ -1,0 +1,335 @@
+/* styles.css */
+
+/* --- GERAL --- */
+@import url('https://fonts.googleapis.com/css2?family=Titan+One&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap'); /* Fonte mais legível para texto corrido */
+
+html {
+    height: 100%; /* Garante que o html ocupe toda a altura */
+    box-sizing: border-box;
+}
+
+*, *:before, *:after {
+    box-sizing: inherit; /* Herda box-sizing para todos os elementos */
+}
+
+body {
+    font-family: 'Roboto', sans-serif; /* Fonte padrão mais legível para conteúdo geral */
+    background-color: #f8eaf3; /* Um tom de rosa mais suave */
+    color: #333;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh; /* Garante que o body ocupe pelo menos a altura da tela */
+    line-height: 1.6;
+}
+
+/* --- HEADER ESPECÍFICO DO INDEX --- */
+header {
+    background-color: #e9c4df; /* Cor de fundo para o cabeçalho do index */
+    padding: 40px 0;
+    text-align: center;
+    width: 100%;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.titulo-container {
+    min-height: 200px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 15px; /* Espaço entre a imagem e o texto */
+}
+
+#logo-header {
+    max-height: 180px; /* Ajuste conforme o tamanho da sua logo */
+    width: auto;
+}
+
+header h1 {
+    font-family: "Titan One", sans-serif;
+    font-size: 2.8rem;
+    color: #a32796; /* Um roxo mais vibrante */
+    margin: 0; /* Remove margem padrão do h1 */
+    letter-spacing: 0.3rem;
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.1);
+}
+
+/* --- MAIN ESPECÍFICO DO INDEX --- */
+main {
+    flex-grow: 1; /* Faz o main ocupar o espaço restante entre header e footer */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center; /* Centraliza o conteúdo do main */
+    width: 100%;
+    padding: 20px;
+}
+
+section.botoes-navegacao {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /* Layout responsivo em grade */
+    gap: 20px; /* Espaço entre os botões */
+    width: 100%;
+    max-width: 900px; /* Largura máxima para os botões */
+    margin-top: 30px;
+    margin-bottom: 30px;
+}
+
+section.botoes-navegacao button {
+    font-family: "Titan One", sans-serif;
+    padding: 18px 25px;
+    border: none;
+    border-radius: 10px; /* Bordas mais suaves */
+    background-color: #b11da4;
+    color: #ffffff;
+    font-size: 1.1rem;
+    cursor: pointer;
+    transition: all 0.3s ease; /* Transição suave para todos os efeitos */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+    text-transform: uppercase; /* Deixa o texto do botão em maiúsculas */
+    letter-spacing: 1px;
+}
+
+section.botoes-navegacao button:hover {
+    background-color: #c832b9; /* Cor mais clara no hover */
+    transform: translateY(-3px) scale(1.02); /* Efeito de "levantar" e leve aumento */
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+}
+
+section.botoes-navegacao button:active {
+    background-color: #9a188f; /* Cor mais escura ao clicar */
+    transform: translateY(1px); /* Efeito de "pressionar" */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.15);
+}
+
+/* --- FOOTER ESPECÍFICO DO INDEX --- */
+footer {
+    background-color: #e9c4df; /* Mesma cor do header para consistência */
+    color: #5c3a52; /* Cor de texto que combine com o fundo */
+    text-align: center;
+    padding: 15px 0;
+    width: 100%;
+    font-size: 0.9rem;
+    /* position: fixed; bottom: 0; */ /* Removido para permitir scroll se necessário */
+    /* Se quiser fixo, descomente, mas main precisa de padding-bottom para não ser coberto */
+}
+
+footer p {
+    margin: 5px 0;
+}
+
+
+/* --- ESTILOS DAS OUTRAS PÁGINAS (MANTENDO O QUE VOCÊ JÁ TINHA, COM AJUSTES) --- */
+/* As seções abaixo são para as páginas de formulário e tabelas */
+
+/* Estiliza os títulos h1 das outras páginas (se precisar diferenciar do index) */
+/* body:not(.pagina-index) h1 { ... } se quiser um estilo diferente */
+
+/* Estiliza as seções das outras páginas */
+body:not(.pagina-index) section { /* Use uma classe no body do index se quiser ser mais específico */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 2rem; /* Ajuste */
+    width: 90%;
+    max-width: 700px; /* Limita largura das seções de formulário/pesquisa */
+    margin-left: auto;
+    margin-right: auto;
+}
+
+body:not(.pagina-index) section input[type="text"],
+body:not(.pagina-index) section input[type="number"],
+body:not(.pagina-index) section input[type="date"],
+body:not(.pagina-index) section select {
+    width: 100%; /* Ocupa toda a largura da seção */
+    border: 1px solid #ccc;
+    padding: 0.8rem;
+    border-radius: 8px; /* Bordas mais suaves */
+    margin-bottom: 1rem;
+    color: #45474B;
+    font-size: 1rem;
+    box-sizing: border-box;
+}
+
+/* Botão de pesquisa e submit de formulários */
+body:not(.pagina-index) section button,
+.form-container button[type="submit"] {
+    padding: 0.8rem 1.5rem;
+    margin-top: 0.5rem;
+    border: none;
+    border-radius: 8px;
+    background-color: #b11da4;
+    color: #F5F7F8;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+body:not(.pagina-index) section button:hover,
+.form-container button[type="submit"]:hover {
+    background-color: #c832b9;
+    transform: scale(1.03);
+}
+
+/* Caixa de resultados da pesquisa (mantendo o seu, talvez precise de ajustes) */
+.resultados-pesquisa { /* Esta classe parece ser genérica */
+    width: 90%;
+    max-width: 800px; /* Ajuste */
+    /* height: 46vh; */ /* Altura fixa pode ser problemática, auto é melhor */
+    max-height: 50vh; /* Altura máxima com scroll */
+    overflow-y: auto;
+    margin-top: 1rem;
+    padding: 1rem;
+    border-radius: 0.6rem;
+    background-color: #fff;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+}
+
+/* Formulários */
+.form-container {
+    background-color: #ffffff;
+    padding: 25px;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    width: 100%; /* Ocupa largura da section pai */
+    max-width: 600px; /* Limita a largura do formulário em si */
+    margin: 20px auto; /* Centraliza se a section for maior */
+    /* overflow-y: auto; */ /* Removido, deixe o scroll natural da página */
+    /* height: 300px; */ /* Removido, altura automática */
+}
+
+.form-container label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 500; /* Deixa o label um pouco mais forte */
+    color: #555;
+}
+
+.form-container input,
+.form-container select {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    margin-bottom: 15px; /* Mais espaço entre os campos */
+    font-size: 1rem;
+}
+
+.form-container button[type="submit"] {
+    width: 100%; /* Botão de salvar ocupando toda a largura */
+    padding: 12px;
+    font-size: 1.1rem;
+}
+
+/* Tabelas */
+table {
+    width: 100%; /* Largura da tabela */
+    max-width: 1000px; /* Largura máxima */
+    margin: 20px left; /* Centraliza a tabela */
+    border-collapse: collapse;
+    background: #fff;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    border-radius: 8px; /* Borda arredondada para a tabela toda */
+    overflow: hidden; /* Para o border-radius funcionar com o thead */
+}
+
+table th, table td {
+    border: 1px solid #e0e0dc;
+    padding: 12px 15px; /* Mais padding */
+    text-align: left;
+}
+
+table thead {
+    background: #a32796; /* Roxo vibrante para o cabeçalho da tabela */
+    color: #fff;
+    font-family: "Titan One", sans-serif; /* Fonte de destaque para cabeçalhos */
+    letter-spacing: 0.5px;
+}
+
+table thead th {
+    border-bottom: 2px solid #8b1f7f; /* Linha um pouco mais grossa abaixo do header */
+}
+
+table tbody tr:nth-child(even) {
+    background-color: #f8f3f7; /* Linhas alternadas com cor suave */
+}
+
+table tbody tr:hover {
+    background-color: #efddeb; /* Efeito hover nas linhas */
+    cursor: default; /* Ou 'pointer' se as linhas forem clicáveis */
+}
+
+/* Mensagens de Status (PHP) */
+#mensagem-status p {
+    padding: 12px 15px;
+    margin: 20px auto; /* Centraliza */
+    border-radius: 5px;
+    max-width: 600px; /* Mesma largura dos formulários */
+    text-align: center;
+    font-weight: 500;
+}
+/* Estilos específicos para erro e sucesso já estavam bons, mantidos implicitamente */
+
+
+/* --- MEDIA QUERIES (AJUSTES PONTUAIS, VOCÊ JÁ TINHA UMA BOA BASE) --- */
+@media (max-width: 768px) {
+    header h1 {
+        font-size: 2.2rem;
+    }
+    #logo-header {
+         width: 800px;   /* ou o valor desejado */
+         height: auto;   /* mantém a proporção original */
+    }
+
+    section.botoes-navegacao {
+        grid-template-columns: 1fr; /* Botões em coluna única em telas menores */
+        max-width: 400px; /* Limita a largura dos botões */
+    }
+
+    .form-container, table, .resultados-pesquisa {
+        width: 95%; /* Ocupa mais da tela */
+    }
+
+    /* Ajuste de fonte para tabelas em telas menores se necessário */
+    table th, table td {
+        padding: 8px 10px;
+        font-size: 0.9rem;
+    }
+}
+
+@media (max-width: 480px) {
+    body {
+        font-size: 14px; /* Ajusta a fonte base para telas pequenas */
+    }
+    header h1 {
+        font-size: 1.8rem;
+        letter-spacing: 0.1rem;
+    }
+    #logo-header {
+        width: 800px;   /* ou o valor desejado */
+        height: auto;   /* mantém a proporção original */
+    }
+
+    section.botoes-navegacao button {
+        font-size: 1rem;
+        padding: 15px 20px;
+    }
+
+    .form-container input,
+    .form-container select,
+    .form-container button[type="submit"] {
+        font-size: 0.95rem;
+    }
+
+    table th, table td {
+        font-size: 0.8rem; /* Pode ser necessário esconder colunas menos importantes */
+        padding: 6px 8px;
+    }
+    /* Para tabelas muito largas em mobile, considere overflow-x: auto no container da tabela */
+    .table-responsive-container { /* Envolva sua tabela com este div se ela for muito larga */
+        overflow-x: auto;
+        margin: 15px 0;
+    }
+}
